@@ -8,21 +8,23 @@ var deck = ["DAce", "D2", "D3", "D4", "D5", "D6", "D7", "D8", "D9", "D10", "DJac
 func _ready() -> void:
 	spawn_card_from_properties(1, 0, Vector3(0.5, 0, -1))
 	deck.shuffle()
-	spawn_card_from_deck(0, Vector3(0, 0, -0.5))
+	spawn_card_from_deck(0, Vector3(0, 0, -0.5), false)
 
 
 ## Spawns a card initialized with the specified properties at a specific location.
 ## cardnum must be less than 14 and cardsuit must be less than 4.
-func spawn_card_from_properties(cardnum, cardsuit, cardposition = Vector3(0,0,0)) -> void:
+func spawn_card_from_properties(cardnum, cardsuit, cardposition = Vector3(0,0,0), faceup = true) -> void:
 	var card = cardscene.instantiate()
 	add_child(card)
 
 	card.configure_card(cardnum,cardsuit)
 	card.position = cardposition
+	if !faceup:
+		card.rotation = Vector3(0, 0, PI);
 
 ## Spawns a card initialized with properties specified from the deck index at a specific location.
 ## deckindex must be less than 52.
-func spawn_card_from_deck(deckindex, cardposition = Vector3(0,0,0)) -> void:
+func spawn_card_from_deck(deckindex, cardposition = Vector3(0,0,0), faceup = true) -> void:
 	var card = cardscene.instantiate()
 	add_child(card)
 
@@ -30,6 +32,8 @@ func spawn_card_from_deck(deckindex, cardposition = Vector3(0,0,0)) -> void:
 	card.configure_card(indexstats[0],indexstats[1])
 
 	card.position = cardposition
+	if !faceup:
+		card.rotation = Vector3(0, 0, PI);
 
 	
 ## Parses the String at the specified deck index for the card's number and suit.
