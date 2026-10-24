@@ -3,6 +3,7 @@
 [ext_resource type="PlaneMesh" uid="uid://ysr1lgfni2u0" path="res://assets/models/Plane.tres" id="1_d81rb"]
 [ext_resource type="Script" uid="uid://ch7w0wltamqfk" path="res://assets/scripts/Card.gd" id="1_ktuci"]
 [ext_resource type="Texture2D" uid="uid://mhslc041xm25" path="res://assets/textures/CardSheet.jpg" id="2_6u4wf"]
+[ext_resource type="Texture2D" uid="uid://bp18tiu7344nh" path="res://assets/textures/card back black.png" id="3_kg30u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktuci"]
 resource_local_to_scene = true
@@ -10,10 +11,15 @@ albedo_texture = ExtResource("2_6u4wf")
 uv1_scale = Vector3(0.075, 0.25, 0)
 uv1_offset = Vector3(0.001, 0, 0)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sy11y"]
+cull_mode = 1
+albedo_texture = ExtResource("3_kg30u")
+
 [node name="Card" type="Node3D" unique_id=123264453]
 transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
 script = ExtResource("1_ktuci")
 
 [node name="CardMesh" type="MeshInstance3D" parent="." unique_id=2021312156]
 material_override = SubResource("StandardMaterial3D_ktuci")
+material_overlay = SubResource("StandardMaterial3D_sy11y")
 mesh = ExtResource("1_d81rb")
