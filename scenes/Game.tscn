@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ch8auyshdrd5w"]
+
+[ext_resource type="Script" uid="uid://ejucjxuf3n28" path="res://assets/scripts/GameManager.gd" id="1_ibkli"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dskc6"]
+
+[sub_resource type="Sky" id="Sky_l66lt"]
+sky_material = SubResource("ProceduralSkyMaterial_dskc6")
+
+[sub_resource type="Environment" id="Environment_cer6l"]
+background_mode = 2
+sky = SubResource("Sky_l66lt")
+
+[node name="GameManager" type="Node3D" unique_id=176378054]
+script = ExtResource("1_ibkli")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1766853893]
+transform = Transform3D(1, 0, 0, 0, 0.83340657, 0.55266047, 0, -0.55266047, 0.83340657, 0, 0.77397585, 0.3262558)
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=500135606]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1633710099]
+offset_left = 140.0
+offset_top = 633.0
+offset_right = 375.0
+offset_bottom = 758.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1655798740]
+environment = SubResource("Environment_cer6l")

@@ -11,8 +11,9 @@ config_version=5
 [application]
 
 config/name="GameCraft_Oct_Jam_SomethingsWatching"
+run/main_scene="uid://ch8auyshdrd5w"
 config/features=PackedStringArray("4.7", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://assets/textures/icon.svg"
 
 [display]
 
@@ -34,5 +35,4 @@ project/assembly_name="GameCraft_Oct_Jam_SomethingsWatching"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b3jrqxexcg7te"]
+
+[ext_resource type="PlaneMesh" uid="uid://ysr1lgfni2u0" path="res://assets/models/Plane.tres" id="1_d81rb"]
+[ext_resource type="Script" uid="uid://ch7w0wltamqfk" path="res://assets/scripts/Card.gd" id="1_ktuci"]
+[ext_resource type="Texture2D" uid="uid://mhslc041xm25" path="res://assets/textures/CardSheet.jpg" id="2_6u4wf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ktuci"]
+resource_local_to_scene = true
+albedo_texture = ExtResource("2_6u4wf")
+uv1_scale = Vector3(0.075, 0.25, 0)
+uv1_offset = Vector3(0.001, 0, 0)
+
+[node name="Card" type="Node3D" unique_id=123264453]
+transform = Transform3D(0.075, 0, 0, 0, 0.075, 0, 0, 0, 0.075, 0, 0, 0)
+script = ExtResource("1_ktuci")
+
+[node name="CardMesh" type="MeshInstance3D" parent="." unique_id=2021312156]
+material_override = SubResource("StandardMaterial3D_ktuci")
+mesh = ExtResource("1_d81rb")
