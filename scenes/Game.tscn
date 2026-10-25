@@ -15,12 +15,15 @@ sky = SubResource("Sky_l66lt")
 [node name="GameManager" type="Node3D" unique_id=176378054]
 script = ExtResource("1_ibkli")
 
+[node name="DealerHand" parent="." unique_id=92400897 instance=ExtResource("2_qbsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.64259124)
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1766853893]
 transform = Transform3D(1, 0, 0, 0, 0.83340657, 0.55266047, 0, -0.55266047, 0.83340657, 0, 0.77397585, 0.3262558)
 current = true
 
-[node name="Hand" parent="Camera3D" unique_id=92400897 instance=ExtResource("2_qbsmt")]
-transform = Transform3D(1, 0, 0, 0, 0.8334064, -0.55266035, 0, 0.55266035, 0.8334064, 0, -0.179, -1)
+[node name="PlayerHand" parent="Camera3D" unique_id=1689785972 instance=ExtResource("2_qbsmt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.30427602, -0.6664686)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=500135606]
 
