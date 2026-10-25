@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ch8auyshdrd5w"]
 
 [ext_resource type="Script" uid="uid://ejucjxuf3n28" path="res://assets/scripts/GameManager.gd" id="1_ibkli"]
+[ext_resource type="PackedScene" uid="uid://5nseinxkv8yn" path="res://scenes/Hand.tscn" id="2_qbsmt"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dskc6"]
 
@@ -18,13 +19,41 @@ script = ExtResource("1_ibkli")
 transform = Transform3D(1, 0, 0, 0, 0.83340657, 0.55266047, 0, -0.55266047, 0.83340657, 0, 0.77397585, 0.3262558)
 current = true
 
+[node name="Hand" parent="Camera3D" unique_id=92400897 instance=ExtResource("2_qbsmt")]
+transform = Transform3D(1, 0, 0, 0, 0.8334064, -0.55266035, 0, 0.55266035, 0.8334064, 0, -0.179, -1)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=500135606]
 
-[node name="Button" type="Button" parent="CanvasLayer" unique_id=1633710099]
+[node name="Hit" type="Button" parent="CanvasLayer" unique_id=1633710099]
 offset_left = 140.0
 offset_top = 633.0
 offset_right = 375.0
 offset_bottom = 758.0
+text = "HIT THAT SHIT"
+
+[node name="Stand" type="Button" parent="CanvasLayer" unique_id=1694633236]
+offset_left = 140.0
+offset_top = 779.0
+offset_right = 375.0
+offset_bottom = 904.0
+text = "STAND YOUR GROUND"
+
+[node name="WagerConfirm" type="Button" parent="CanvasLayer" unique_id=906163949]
+offset_left = 1047.0
+offset_top = 774.0
+offset_right = 1282.0
+offset_bottom = 899.0
+text = "BET"
+
+[node name="Wager" type="LineEdit" parent="CanvasLayer" unique_id=113373691]
+offset_left = 751.0
+offset_top = 791.0
+offset_right = 1006.0
+offset_bottom = 877.0
+virtual_keyboard_type = 2
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1655798740]
 environment = SubResource("Environment_cer6l")
+
+[connection signal="button_up" from="CanvasLayer/Hit" to="." method="_on_hit_button_up"]
+[connection signal="button_up" from="CanvasLayer/Stand" to="." method="_on_stand_button_up"]
